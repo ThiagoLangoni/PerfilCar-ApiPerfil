@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "5a0eda30-be3e-44ee-920c-b74cc63044d1",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lista Perfil",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Perfil por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfil/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfil",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Perfil por e-mail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfis/a@b.c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfis",
+						"a@b.c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Perfil",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"apelido\": \"ié ié 3 - apelido\",\n        \"marca\": \"marca do carro - marca\",\n        \"modelo\": \"modelo do carro - modelo\",\n        \"quilometragemAtual\": \"10.000 - KM\",\n        \"anoFabricacao\": \"2019 - fabricacao\",\n        \"anoModelo\": \"2020 - modelo\",\n        \"nomeProprietario\": \"Eduardo Matoso - proprietário\",\n        \"informacoesAdicionais\": \"rááááá informações adicionais\",\n        \"timestamp\": \"timestamp 2019-11-02-19.41.55\",\n        \"emailProprietario\": \"a@b.cd\"\n    }\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Perfil",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"apelido\": \"ié ié atualizado- apelido\",\r\n    \"marca\": \"marca do carro - marca\",\r\n    \"modelo\": \"modelo do carro - modelo\",\r\n    \"quilometragemAtual\": \"10.000 - KM\",\r\n    \"anoFabricacao\": \"2019 - fabricacao\",\r\n    \"anoModelo\": \"2020 - modelo\",\r\n    \"nomeProprietario\": \"Eduardo Matoso - proprietário\",\r\n    \"informacoesAdicionais\": \"rááááá informações adicionais\",\r\n    \"timestamp\": \"timestamp 2019-11-02-19.41.55\",\r\n    \"emailProprietario\": \"a@b.c\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Perfil",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": 6\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/perfil/perfil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"perfil",
+						"perfil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Usuários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Usuário por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuario/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuario",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Usuário por e-mail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuarios/a@b.c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuarios",
+						"a@b.c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria Usuário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"emailUsuario\": \"a@b.cd\",\n        \"nomeUsuario\": \"Eduardo Matoso 8 - proprietário\",\n        \"senhaUsuario\": \"456\"\n    }\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza Usuário",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"idUsuario\": 11,\r\n        \"emailUsuario\": \"a@b.c\",\r\n        \"nomeUsuario\": \"Eduardo Matoso - proprietário\",\r\n        \"senhaUsuario\": \"456\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta Usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"idUsuario\": 8\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuario/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
