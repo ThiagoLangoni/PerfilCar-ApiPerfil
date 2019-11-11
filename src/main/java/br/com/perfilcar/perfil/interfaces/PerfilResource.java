@@ -20,6 +20,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import br.com.perfilcar.perfil.application.PerfilService;
 import br.com.perfilcar.perfil.domain.Perfil;
 import br.com.perfilcar.perfil.domain.service.Producer;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(path = "/perfil")
@@ -37,6 +39,7 @@ public class PerfilResource {
 	}
 
 	@GetMapping("/perfis")
+	@ApiOperation(value="Retorna uma lista de perfis")
 	public List<Perfil> listaPerfis() {
 		String msgKafka = "Pedido de Lista de perfil" + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
@@ -44,6 +47,7 @@ public class PerfilResource {
 	}
 
 	@GetMapping("/perfis/{emailProprietario}")
+	@ApiOperation(value="Retorna uma lista de perfis do e-mail especificado")
 	public List<Perfil> listaPerfisPorEmail(@PathVariable(value = "emailProprietario") String emailProprietario) {
 		String msgKafka = "Pedido de Lista de perfil por e-mail" + "-" + emailProprietario + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
@@ -51,6 +55,7 @@ public class PerfilResource {
 	}
 
 	@GetMapping("/perfil/{id}")
+	@ApiOperation(value="Retorna um perfil unico do Id especificado")
 	public Perfil listaPerfilUnico(@PathVariable(value = "id") long id) {
 		String msgKafka = "Pedido de Lista de perfil por ID" + "-" + id + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
@@ -58,6 +63,7 @@ public class PerfilResource {
 	}
 
 	@PostMapping("/perfil")
+	@ApiOperation(value="Cria um perfil com os dados informados")
 	public ResponseEntity<Void> salvaPerfil(@RequestBody Perfil perfil) {
 		String msgKafka = "Pedido de criacao de Perfil" + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
@@ -73,6 +79,7 @@ public class PerfilResource {
 	}
 
 	@PutMapping("/perfil")
+	@ApiOperation(value="Atualiza um perfil com os dados informados")
 	public Perfil atualizaPerfil(@RequestBody Perfil perfil) {
 		String msgKafka = "Pedido de atualizacao de perfil" + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
@@ -80,6 +87,7 @@ public class PerfilResource {
 	}
 
 	@DeleteMapping("/perfil/{id}")
+	@ApiOperation(value="Deleta o perfil Informado")
 	public void deletaPerfil(@PathVariable(value = "id") long id) {
 		String msgKafka = "Pedido de delecao de perfil" + "-" + ZonedDateTime.now().toString();
 		this.producerkafka.sendMessage(msgKafka);
