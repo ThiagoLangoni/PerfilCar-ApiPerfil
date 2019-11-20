@@ -22,7 +22,7 @@ spring:
             path: /db
     kafka:
         producer:
-            bootstrap-servers: localhost:9092
+            bootstrap-servers: 192.168.0.32:9092
             key-serializer: org.apache.kafka.common.serialization.StringSerializer
             value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
